@@ -5,6 +5,7 @@ import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import "./App.css";
+import { locations } from './constants';
 
 const App: React.FC = () => {
 	return (
@@ -13,7 +14,7 @@ const App: React.FC = () => {
 			<main>
 				<Routes>
 					<Route path="/home" element={<Home />} />
-					<Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/aboutUs" element={<AboutUs locations={locations} />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/" element={<Navigate to="/home" />} />
 					{/* // add route:* */}

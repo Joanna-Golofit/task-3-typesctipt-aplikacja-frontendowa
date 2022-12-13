@@ -1,11 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import classes from './Navigation.module.css'
-// import './Navigation.css'
 
 
-const Navigation = () => {
-  return (
+const Navigation: React.FC = () => {
+	return (
 		<header className={classes.header}>
 			<nav>
 				<ul className={classes.ul}>
@@ -37,6 +36,6 @@ const Navigation = () => {
 			</nav>
 		</header>
 	);
-}
+};
 
 export default Navigation

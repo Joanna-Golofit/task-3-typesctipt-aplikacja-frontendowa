@@ -2,6 +2,11 @@ body {
   background: gray;
 }
 
+main {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .App {
   margin-top: 30px;
   width: 100%;
