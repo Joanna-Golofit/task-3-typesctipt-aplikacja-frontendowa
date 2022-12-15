@@ -3,7 +3,11 @@ import { Locations } from '../models';
 
 interface Props {
 	locations: Locations[];
+	// jakasFunkcja: () => void;
+	// jakasFunkcja: (e: React.FormEvent) => void;
 }
+
+// e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({locations}: Props) => {
   return (
