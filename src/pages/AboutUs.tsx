@@ -12,33 +12,19 @@ interface Props {
 // e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
-	
+
 	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
 		const target = (event.target as HTMLLIElement);
-		// const value = (event.target as HTMLLIElement).innerHTML;
 		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
 			.innerHTML;
-		// console.log("clg", event.target.previousSibling.innerHTML);
 		console.log("target", (target.previousElementSibling as HTMLLIElement).innerHTML);
 		toast.success("Copy to clipboard succeeded", {
 			theme: "dark",
 		});
 		console.log("clg", dataToCopy);
-		// setText(value);
 		navigator.clipboard.writeText(dataToCopy);
-		// toast.success(value, {
-		// 	theme: "dark",
-		// });
-		// setIsCopied(true);
-		// setTimeout(() => {
-		// 	setIsCopied(false);
-		// }, 1000);
 	};
 
-	// const notify2 = () => toast.error("Copy to clipboard failed!");
-
-	// toast.error("Lorem ipsum dolor");
-	// toast.success("Lorem ipsum dolor");
 
 	return (
 		<div>
@@ -53,10 +39,9 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 					<li
 						className={classes.location}
 						key={location.zip}
-						
 						// onClick={event => {
-							// 	setText((event.target as HTMLLIElement).innerHTML);
-							// 	console.log((event.target as HTMLLIElement).innerHTML);
+						// 	setText((event.target as HTMLLIElement).innerHTML);
+						// 	console.log((event.target as HTMLLIElement).innerHTML);
 						// }}
 					>
 						{/* {location.country} {location.street} {location.zip}	{location.city} */}
@@ -64,8 +49,12 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 							{`${location.country} ${location.street} ${location.zip} ${location.city}`}
 						</span>
 						<button
+							className={classes.button}
 							title="Click to copy to the clipboard"
-							onClick={notify}> copy</button>
+							onClick={notify}
+						>
+							copy
+						</button>
 					</li>
 				))}
 			</ul>
