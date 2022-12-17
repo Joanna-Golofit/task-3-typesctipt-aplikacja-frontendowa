@@ -52,19 +52,20 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 				{locations.map(location => (
 					<li
 						className={classes.location}
-						title="Click to copy to the clipboard"
 						key={location.zip}
-
+						
 						// onClick={event => {
-						// 	setText((event.target as HTMLLIElement).innerHTML);
-						// 	console.log((event.target as HTMLLIElement).innerHTML);
+							// 	setText((event.target as HTMLLIElement).innerHTML);
+							// 	console.log((event.target as HTMLLIElement).innerHTML);
 						// }}
 					>
 						{/* {location.country} {location.street} {location.zip}	{location.city} */}
 						<span className="DataToCopy">
 							{`${location.country} ${location.street} ${location.zip} ${location.city}`}
 						</span>
-						<button onClick={notify}> copy</button>
+						<button
+							title="Click to copy to the clipboard"
+							onClick={notify}> copy</button>
 					</li>
 				))}
 			</ul>
