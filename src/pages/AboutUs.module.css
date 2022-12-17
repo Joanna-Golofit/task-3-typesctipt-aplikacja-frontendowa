@@ -1,3 +1,7 @@
-.location {
-  cursor: pointer;
+button {
+  display: none;
+}
+
+.location:hover button {
+  display: inline-block
 }

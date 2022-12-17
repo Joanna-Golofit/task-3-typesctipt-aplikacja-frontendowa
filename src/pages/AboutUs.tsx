@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Locations } from "../models";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,20 +12,23 @@ interface Props {
 // e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
-	// const [text, setText] = useState("Copy this text to clipboard");
-	// const [isCopied, setIsCopied] = useState(false);
-	// const notify = (event: React.ChangeEvent<HTMLLIElement>) => {
+	
 	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
-		const value = (event.target as HTMLLIElement).innerHTML;
-		// toast.success("Copy to clipboard succeeded", {
-		// 	theme: "dark",
-		// });
-		console.log("clg", value);
-		// setText(value);
-		navigator.clipboard.writeText(value);
-		toast.success(value, {
+		const target = (event.target as HTMLLIElement);
+		// const value = (event.target as HTMLLIElement).innerHTML;
+		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
+			.innerHTML;
+		// console.log("clg", event.target.previousSibling.innerHTML);
+		console.log("target", (target.previousElementSibling as HTMLLIElement).innerHTML);
+		toast.success("Copy to clipboard succeeded", {
 			theme: "dark",
 		});
+		console.log("clg", dataToCopy);
+		// setText(value);
+		navigator.clipboard.writeText(dataToCopy);
+		// toast.success(value, {
+		// 	theme: "dark",
+		// });
 		// setIsCopied(true);
 		// setTimeout(() => {
 		// 	setIsCopied(false);
@@ -51,16 +54,17 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 						className={classes.location}
 						title="Click to copy to the clipboard"
 						key={location.zip}
-						onClick={notify}
+
 						// onClick={event => {
 						// 	setText((event.target as HTMLLIElement).innerHTML);
 						// 	console.log((event.target as HTMLLIElement).innerHTML);
 						// }}
 					>
 						{/* {location.country} {location.street} {location.zip}	{location.city} */}
-						<p>
+						<span className="DataToCopy">
 							{`${location.country} ${location.street} ${location.zip} ${location.city}`}
-						</p>
+						</span>
+						<button onClick={notify}> copy</button>
 					</li>
 				))}
 			</ul>
