@@ -12,8 +12,9 @@ interface Props {
 // e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
+	const isRequestSucces: boolean = true;
 
-	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => { // jak mozna inaczej to obejsc? 
 		const target = (event.target as HTMLLIElement);
 		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
 			.innerHTML;
