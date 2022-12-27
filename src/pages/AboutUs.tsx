@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Locations } from "../models";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import classes from "./AboutUs.module.css";
 import CopyButton from "../components/CopyButton";
 import { notify } from "../helpers/helpers";
+import CopyToClipboardContext from "../store/CopyToClipboardContext";
 interface Props {
 	locations: Locations[];
 	// jakasFunkcja: () => void;
@@ -14,7 +15,7 @@ interface Props {
 // e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
-
+	const copyToClipboardCtx = useContext(CopyToClipboardContext);
 
 	// const isRequestSuccess: boolean = true;
 
@@ -33,6 +34,7 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 	// 	navigator.clipboard.writeText(dataToCopy);
 	// };
 
+	console.log("ctx", copyToClipboardCtx);
 
 	return (
 		<div>

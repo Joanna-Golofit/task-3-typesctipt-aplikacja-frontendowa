@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
@@ -6,15 +7,20 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import "./App.css";
 import { locations } from './constants';
+import CopyToClipboardContext from './store/CopyToClipboardContext';
 
 const App: React.FC = () => {
+const [isRequestSuccess, setIsRequestSuccess] = useState(true);
+
 	return (
-		<div>
+		<CopyToClipboardContext.Provider
+			value={{ isRequestSuccess: isRequestSuccess }}
+		>
 			<Navigation />
 			<main>
 				<Routes>
 					<Route path="/home" element={<Home />} />
-          <Route path="/aboutUs" element={<AboutUs locations={locations} />} />
+					<Route path="/aboutUs" element={<AboutUs locations={locations} />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/" element={<Navigate to="/home" />} />
 					{/* // add route:* */}
@@ -52,7 +58,7 @@ const App: React.FC = () => {
 				</div>
 			</main>
 			<Footer />
-		</div>
+		</CopyToClipboardContext.Provider>
 	);
 };
 
