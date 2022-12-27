@@ -5,13 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 // Button -> onClick, classNames, title
 // useClipboardAndNotification.tsx
 
-{/* <>
-<About>
-<home>
-{
-	isActive && <Toast>
-}
-</> */}
+//  <>
+// <About>
+// <home>
+// {
+// 	isActive && <Toast>
+// }
+// </>
 
 // jak ustawić style z tego poziomu zeby button pojawiał sie dobiero przy hoverze na element nadrzedny?
 
@@ -51,7 +51,7 @@ const useClipboardAndNotification = () => {
           title="Click to copy to the clipboard"
           onClick={notify}
           >
-          copy
+          Copy
         </button>
         <br/>
       </>

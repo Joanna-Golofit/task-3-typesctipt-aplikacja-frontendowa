@@ -4,3 +4,11 @@ export interface Locations {
 		zip: string;
 		city: string;
 }
+
+// export interface CopyToClipboardContext {
+// 	isRequestSuccess: boolean;
+// }
+
+// export type CopyToClipboardContextType = {
+// 	isRequestSuccess: CopyToClipboardContext;
+// };

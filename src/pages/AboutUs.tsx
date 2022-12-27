@@ -1,8 +1,10 @@
 import React from "react";
 import { Locations } from "../models";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import classes from "./AboutUs.module.css";
+import CopyButton from "../components/CopyButton";
+import { notify } from "../helpers/helpers";
 interface Props {
 	locations: Locations[];
 	// jakasFunkcja: () => void;
@@ -12,24 +14,31 @@ interface Props {
 // e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
-	const isRequestSucces: boolean = true;
 
-	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => { // jak mozna inaczej to obejsc? 
-		const target = (event.target as HTMLLIElement);
-		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
-			.innerHTML;
-		console.log("target", (target.previousElementSibling as HTMLLIElement).innerHTML);
-		toast.success("Copy to clipboard succeeded", {
-			theme: "dark",
-		});
-		console.log("clg", dataToCopy);
-		navigator.clipboard.writeText(dataToCopy);
-	};
+
+	// const isRequestSuccess: boolean = true;
+
+	// 	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => { // jak mozna inaczej to obejsc?
+	// 	const target = (event.target as HTMLLIElement);
+	// 	const dataToCopy = (target.previousElementSibling as HTMLLIElement)
+	// 		.innerHTML;
+	// 	console.log(
+	// 		"target",
+	// 		(target.previousElementSibling as HTMLLIElement).innerHTML
+	// 	);
+	// 	toast.success("Copy to clipboard succeeded", {
+	// 		theme: "dark",
+	// 	});
+	// 	console.log("clg", dataToCopy);
+	// 	navigator.clipboard.writeText(dataToCopy);
+	// };
 
 
 	return (
 		<div>
 			<h1>AboutUs</h1>
+			{/* <CopyButton /> */}
+			<CopyButton onClick={notify} />
 			<b>
 				Każda lokalizacja powinna posiadać możliwość skopiowania jej do schowka
 				przy pomocy buttona/icony kopiowania
