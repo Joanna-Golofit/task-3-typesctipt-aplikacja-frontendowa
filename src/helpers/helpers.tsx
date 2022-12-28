@@ -2,7 +2,7 @@
 import { toast } from "react-toastify";
 // import CopyToClipboardContext from "../store/CopyToClipboardContext";
 
-// const copyToClipboardCtx = useContext(CopyToClipboardContext);
+// const ctx = useContext(CopyToClipboardContext);
 
 
 

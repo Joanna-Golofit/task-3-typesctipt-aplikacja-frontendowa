@@ -1,16 +1,25 @@
 import React, { useState } from "react";
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import "./App.css";
-import { locations } from './constants';
-import CopyToClipboardContext from './store/CopyToClipboardContext';
+import { locations } from "./constants";
+import CopyToClipboardContext from "./store/CopyToClipboardContext";
+import { ToastContainer } from "react-toastify";
 
 const App: React.FC = () => {
-const [isRequestSuccess, setIsRequestSuccess] = useState(true);
+	// const [isRequestSuccess, setIsRequestSuccess] = useState(false);
+	const [randomValue, setRandomValue] = useState(
+		Math.floor(Math.random() * 10)
+		);
+		const isRequestSuccess: boolean = randomValue < 5;
+	
+	// useEffect(() => {
+	// 	setRandomValue(Math.floor(Math.random() * 10));
+	// }, []);
 
 	return (
 		<CopyToClipboardContext.Provider
@@ -29,6 +38,7 @@ const [isRequestSuccess, setIsRequestSuccess] = useState(true);
 				<br />
 				<br />
 				<div style={{ backgroundColor: "gray" }}>
+					<p>{randomValue}</p>
 					<h3>
 						Pamiętaj, że piszesz w Typescript – typuj tam gdzie jest potrzeba.
 					</h3>
@@ -57,6 +67,8 @@ const [isRequestSuccess, setIsRequestSuccess] = useState(true);
 					ich zamknięcia
 				</div>
 			</main>
+			<ToastContainer autoClose={3000} closeOnClick position="bottom-right" />
+
 			<Footer />
 		</CopyToClipboardContext.Provider>
 	);

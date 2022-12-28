@@ -1,9 +1,11 @@
 import React from "react";
-import useClipboardAndNotification from "../hooks/use-clipboard-and-notification";
+import CopyButton from "../components/CopyButton";
+// import useClipboardAndNotification from "../hooks/use-clipboard-and-notification";
+import useNotify from "../hooks/UseNotify";
 import classes from "./Home.module.css";
 
 const Home: React.FC = () => {
-	const { copyButton, ToastContainer } = useClipboardAndNotification();
+	const { notify } = useNotify();
 
 	return (
 		<div>
@@ -12,7 +14,7 @@ const Home: React.FC = () => {
 				Dodaj tutaj losową treść wg patternu:
 				<article>
 					<h2 className={classes.header}>Człowiek nie robot!</h2>
-					{copyButton}
+					<CopyButton onClick={notify} />
 					<span>
 						zawartością treści w paragrafie pod headingiem.... zawartością
 						treści w paragrafie pod headingiem. Zawartością treści w paragrafie
@@ -21,7 +23,7 @@ const Home: React.FC = () => {
 						treści w paragrafie pod headingiem. Zawartością treści w paragrafie
 						pod headingiem, zawartością treści w paragrafie pod headingiem..
 					</span>
-					{copyButton}
+					<CopyButton onClick={notify} />
 				</article>
 				<br />
 				<b>
@@ -30,7 +32,6 @@ const Home: React.FC = () => {
 					komunikat o skopiowaniu
 				</b>
 			</section>
-			{ToastContainer}
 		</div>
 	);
 };

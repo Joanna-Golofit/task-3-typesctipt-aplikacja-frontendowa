@@ -14,9 +14,12 @@ interface CopyButtonProps {
 // const CopyButton = ({ onClick = { notify }, text = "Copy" }: CopyButtonProps) => {
 const CopyButton = ({ onClick, text = "Copy" }: CopyButtonProps) => {
 	return (
+		<>
 		<button className={classes.copyButton} onClick={onClick}>
 			{text}
 		</button>
+		<br />
+		</>
 	);
 };
 

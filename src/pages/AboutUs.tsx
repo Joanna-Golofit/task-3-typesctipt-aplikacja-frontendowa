@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Locations } from "../models";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import classes from "./AboutUs.module.css";
 import CopyButton from "../components/CopyButton";
@@ -15,7 +15,7 @@ interface Props {
 // e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
-	const copyToClipboardCtx = useContext(CopyToClipboardContext);
+	const ctx = useContext(CopyToClipboardContext);
 
 	// const isRequestSuccess: boolean = true;
 
@@ -34,13 +34,15 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 	// 	navigator.clipboard.writeText(dataToCopy);
 	// };
 
-	console.log("ctx", copyToClipboardCtx);
+	console.log("ctx", ctx);
 
 	return (
 		<div>
 			<h1>AboutUs</h1>
 			{/* <CopyButton /> */}
-			<CopyButton onClick={notify} />
+			<p>{ctx.isRequestSuccess ? "true" : "false"}</p>
+			{ctx.isRequestSuccess && <CopyButton onClick={notify} />}
+			{!ctx.isRequestSuccess && <p>ooo</p>}
 			<b>
 				Każda lokalizacja powinna posiadać możliwość skopiowania jej do schowka
 				przy pomocy buttona/icony kopiowania
@@ -70,7 +72,7 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 					</li>
 				))}
 			</ul>
-			<ToastContainer autoClose={3000} closeOnClick position="bottom-right" />
+			{/* <ToastContainer autoClose={3000} closeOnClick position="bottom-right" /> */}
 		</div>
 	);
 };
