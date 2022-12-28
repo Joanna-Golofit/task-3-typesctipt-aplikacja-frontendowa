@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
@@ -12,14 +12,8 @@ import { ToastContainer } from "react-toastify";
 
 const App: React.FC = () => {
 	// const [isRequestSuccess, setIsRequestSuccess] = useState(false);
-	const [randomValue, setRandomValue] = useState(
-		Math.floor(Math.random() * 10)
-		);
+	const randomValue = Math.floor(Math.random() * 10);
 		const isRequestSuccess: boolean = randomValue < 5;
-	
-	// useEffect(() => {
-	// 	setRandomValue(Math.floor(Math.random() * 10));
-	// }, []);
 
 	return (
 		<CopyToClipboardContext.Provider
@@ -67,7 +61,12 @@ const App: React.FC = () => {
 					ich zamknięcia
 				</div>
 			</main>
-			<ToastContainer autoClose={3000} closeOnClick position="bottom-right" />
+			<ToastContainer
+				autoClose={3000}
+				limit={3}
+				closeOnClick
+				position="bottom-right"
+			/>
 
 			<Footer />
 		</CopyToClipboardContext.Provider>

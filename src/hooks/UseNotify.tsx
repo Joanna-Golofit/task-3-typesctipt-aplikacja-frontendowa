@@ -17,7 +17,7 @@ import CopyToClipboardContext from "../store/CopyToClipboardContext";
 
 // jak ustawić style z tego poziomu zeby button pojawiał sie dobiero przy hoverze na element nadrzedny?
 
-const UseNotify = () => {
+const useNotify = () => {
 	const ctx = useContext(CopyToClipboardContext);
 
 	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -25,21 +25,27 @@ const UseNotify = () => {
 		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
 			.innerHTML;
 
-		if (ctx.isRequestSuccess) {
-			console.log(
-				"success",
-				(target.previousElementSibling as HTMLLIElement).innerHTML
-			);
-			toast.success("Copy to clipboard succeeded", {
-				theme: "dark",
-			});
-		} else {
+		// try {
+			
+			if (ctx.isRequestSuccess) {
+				console.log(
+					"success",
+					(target.previousElementSibling as HTMLLIElement).innerHTML
+					);
+					toast.success("Copy to clipboard succeeded", {
+						theme: "dark",
+						pauseOnFocusLoss: false,
+					});
+		} 
+		else {
+		// } catch (e) {
 				console.log(
 					"not",
 					(target.previousElementSibling as HTMLLIElement).innerHTML
 				);
 				toast.error("Copy to clipboard failed", {
 					theme: "dark",
+					pauseOnFocusLoss: false,
 				});
 		}
 
@@ -69,4 +75,4 @@ const UseNotify = () => {
 	};
 };
 
-export default UseNotify;
+export default useNotify;
