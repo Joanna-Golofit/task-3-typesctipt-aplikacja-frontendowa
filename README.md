@@ -1,5 +1,29 @@
 # Getting Started with Create React App
 
+
+
+
+
+
+
+
+
+kazda zakładka jakos inaczej uzywa funkcji notify, najswiezsze zmiany to UseNotify i CopyToClipboard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
