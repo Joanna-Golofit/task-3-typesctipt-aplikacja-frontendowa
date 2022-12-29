@@ -10,6 +10,10 @@ export interface IClipboardData {
 	isRequestSuccess: boolean;
 }
 
+export interface ClipboardProviderProps {
+	children: React.ReactNode;
+}
+
 // export interface CopyToClipboardContext {
 // 	isRequestSuccess: boolean;
 // }

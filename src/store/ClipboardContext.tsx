@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { IClipboardData } from '../models';
+import { IClipboardData, ClipboardProviderProps } from "../models";
 
 export const ClipboardContext = React.createContext({});
 
-export const ClipboardProvider: React.FC<React.ReactNode> = props => {
+export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
+
 	const [clipboardData, setClipboardData] = useState<IClipboardData>({
 		copiedData: "",
 		isRequestSuccess: Math.floor(Math.random() * 10) < 8,
 	});
+
 	return (
-    <ClipboardContext.Provider value={"hello"}>
-      {props.children}
-    </ClipboardContext.Provider>
+		<ClipboardContext.Provider value="hello">
+			{children}
+		</ClipboardContext.Provider>
 	);
 };
