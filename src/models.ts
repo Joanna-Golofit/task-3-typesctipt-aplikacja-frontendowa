@@ -5,6 +5,11 @@ export interface Locations {
 		city: string;
 }
 
+export interface IClipboardData {
+	copiedData: string;
+	isRequestSuccess: boolean;
+}
+
 // export interface CopyToClipboardContext {
 // 	isRequestSuccess: boolean;
 // }

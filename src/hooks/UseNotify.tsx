@@ -1,78 +1,45 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import CopyToClipboardContext from "../store/CopyToClipboardContext";
-
-// Button -> onClick, classNames, title
-// useClipboardAndNotification.tsx
-
-//  <>
-// <About>
-// <home>
-// {
-// 	isActive && <Toast>
-// }
-// </>
-
-// jak ustawić style z tego poziomu zeby button pojawiał sie dobiero przy hoverze na element nadrzedny?
+// import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+// import ClipboardContext from "../store/ClipboardContext";
 
 const useNotify = () => {
-	const ctx = useContext(CopyToClipboardContext);
+// 	const ctx = useContext(CopyToClipboardContext);
 
-	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
-		const target = event.target as HTMLLIElement;
-		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
-			.innerHTML;
+// 	const notify = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+// 		const target = event.target as HTMLLIElement;
+// 		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
+// 			.innerHTML;
 
-		// try {
-			
-			if (ctx.isRequestSuccess) {
-				console.log(
-					"success",
-					(target.previousElementSibling as HTMLLIElement).innerHTML
-					);
-					toast.success("Copy to clipboard succeeded", {
-						theme: "dark",
-						pauseOnFocusLoss: false,
-					});
-		} 
-		else {
-		// } catch (e) {
-				console.log(
-					"not",
-					(target.previousElementSibling as HTMLLIElement).innerHTML
-				);
-				toast.error("Copy to clipboard failed", {
-					theme: "dark",
-					pauseOnFocusLoss: false,
-				});
-		}
 
-		// i nie wiem jak zrobić zeby  dac info o errorze..kiedy jest error ? po czym to poznac? ;p
-		// toast.error("Copy to clipboard failed");
+// 		if (ctx.isRequestSuccess) {
+// 			console.log(
+// 				"success",
+// 				(target.previousElementSibling as HTMLLIElement).innerHTML
+// 			);
+// 			toast.success("Copy to clipboard succeeded", {
+// 				theme: "dark",
+// 				pauseOnFocusLoss: false,
+// 			});
+// 		} else {
+// 			console.log(
+// 				"not",
+// 				(target.previousElementSibling as HTMLLIElement).innerHTML
+// 			);
+// 			toast.error("Copy to clipboard failed", {
+// 				theme: "dark",
+// 				pauseOnFocusLoss: false,
+// 			});
+// 		}
 
-		console.log("clg", dataToCopy);
-		navigator.clipboard.writeText(dataToCopy);
-	};
-	return {
-		notify,
-		// copyButton: (
-		//   <>
-		//     <button
-		//       style={styles.copyButton}
-		//       title="Click to copy to the clipboard"
-		//       onClick={notify}
-		//       >
-		//       Copy
-		//     </button>
-		//     <br/>
-		//   </>
-		// ),
-		// ToastContainer: (
-		// 	<ToastContainer autoClose={3000} closeOnClick position="bottom-right" />
-		// ),
-	};
+// 		console.log("clg", dataToCopy);
+// 		navigator.clipboard.writeText(dataToCopy);
+// 	};
+	return (
+
+		<p>use notify</p>
+	)
 };
 
 export default useNotify;

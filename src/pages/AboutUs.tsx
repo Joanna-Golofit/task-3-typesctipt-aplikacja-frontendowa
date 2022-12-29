@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import classes from "./AboutUs.module.css";
 import CopyButton from "../components/CopyButton";
 import { notify } from "../helpers/helpers";
-import CopyToClipboardContext from "../store/CopyToClipboardContext";
+// import ClipboardContext from "../store/ClipboardContext";
 interface Props {
 	locations: Locations[];
 	// jakasFunkcja: () => void;
@@ -15,7 +15,7 @@ interface Props {
 // e: React.FormEvent
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
-	const ctx = useContext(CopyToClipboardContext);
+	// const ctx = useContext(ClipboardContext);
 
 	// const isRequestSuccess: boolean = true;
 
@@ -34,15 +34,15 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 	// 	navigator.clipboard.writeText(dataToCopy);
 	// };
 
-	console.log("ctx", ctx);
+	// console.log("ctx", ctx);
 
 	return (
 		<div>
 			<h1>AboutUs</h1>
 			{/* <CopyButton /> */}
-			<p>{ctx.isRequestSuccess ? "true" : "false"}</p>
+			{/* <p>{ctx.isRequestSuccess ? "true" : "false"}</p>
 			{ctx.isRequestSuccess && <CopyButton onClick={notify} />}
-			{!ctx.isRequestSuccess && <p>ooo</p>}
+			{!ctx.isRequestSuccess && <p>ooo</p>} */}
 			<b>
 				Każda lokalizacja powinna posiadać możliwość skopiowania jej do schowka
 				przy pomocy buttona/icony kopiowania

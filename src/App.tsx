@@ -3,36 +3,32 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import AboutUs from "./pages/AboutUs";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
+// import Contact from "./pages/Contact";
+// import Home from "./pages/Home";
 import "./App.css";
 import { locations } from "./constants";
-import CopyToClipboardContext from "./store/CopyToClipboardContext";
+import { ClipboardProvider } from "./store/ClipboardContext";
 import { ToastContainer } from "react-toastify";
 
 const App: React.FC = () => {
 	// const [isRequestSuccess, setIsRequestSuccess] = useState(false);
-	const randomValue = Math.floor(Math.random() * 10);
-		const isRequestSuccess: boolean = randomValue < 5;
 
 	return (
-		<CopyToClipboardContext.Provider
-			value={{ isRequestSuccess: isRequestSuccess }}
-		>
+		<ClipboardProvider>
 			<Navigation />
 			<main>
 				<Routes>
-					<Route path="/home" element={<Home />} />
+					{/* <Route path="/home" element={<Home />} /> */}
 					<Route path="/aboutUs" element={<AboutUs locations={locations} />} />
-					<Route path="/contact" element={<Contact />} />
-					<Route path="/" element={<Navigate to="/home" />} />
+					{/* <Route path="/contact" element={<Contact />} /> */}
+					{/* <Route path="/" element={<Navigate to="/home" />} /> */}
 					{/* // add route:* */}
 				</Routes>
 
 				<br />
 				<br />
 				<div style={{ backgroundColor: "gray" }}>
-					<p>{randomValue}</p>
+					{/* <p>{randomValue}</p> */}
 					<h3>
 						Pamiętaj, że piszesz w Typescript – typuj tam gdzie jest potrzeba.
 					</h3>
@@ -69,7 +65,7 @@ const App: React.FC = () => {
 			/>
 
 			<Footer />
-		</CopyToClipboardContext.Provider>
+		</ClipboardProvider>
 	);
 };
 
