@@ -9,7 +9,7 @@
 
 
 kazda zakładka jakos inaczej uzywa funkcji notify, najswiezsze zmiany to UseNotify i CopyToClipboard
-
+a teraz probuje sie pozbyc toastify i zrobic to zamiast uzywac biblioteki
 
 
 
