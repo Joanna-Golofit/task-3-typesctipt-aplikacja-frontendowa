@@ -17,18 +17,20 @@ const App: React.FC = () => {
 	if (ctx !== null && ctx.clipboardData.isRequestSuccess) {
 		console.log("ctx.list", ctx.list);
 	}
+	console.log("ctx", ctx);
 	return (
-		<ClipboardProvider>
+		// <ClipboardProvider>
+		<>
 			<Navigation />
 			<main>
-				<p>
-					elo
-				</p>
+				<p>elo</p>
+				{/* <Toast toastList={ctx.list} /> */}
+
 				{ctx !== null && ctx.clipboardData.isRequestSuccess && (
 					<>
-					<Toast toastList={ctx.list} />
-					<Toast  />
-					 </>
+						<Toast toastList={ctx.list} />
+						{/* <Toast /> */}
+					</>
 				)}
 				<Routes>
 					{/* <Route path="/home" element={<Home />} /> */}
@@ -55,10 +57,11 @@ const App: React.FC = () => {
 				limit={3}
 				closeOnClick
 				position="bottom-right"
-			/>
+				/>
 
 			<Footer />
-		</ClipboardProvider>
+			</>
+		// </ClipboardProvider>
 	);
 };
 

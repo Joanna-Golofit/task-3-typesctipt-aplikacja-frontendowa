@@ -3,14 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import { ClipboardProvider } from "./store/ClipboardContext";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
 );
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
+		<ClipboardProvider>
+			<BrowserRouter>
 				<App />
-		</BrowserRouter>
+			</BrowserRouter>
+		</ClipboardProvider>
 	</React.StrictMode>
 );

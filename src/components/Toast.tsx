@@ -1,14 +1,15 @@
 import React from 'react'
 import { ToastProps, IToastProperties } from "../models";
 
-const Toast: React.FC<ToastProps> = (props) => {
-  console.log(props)
-  return (
+const Toast: React.FC<ToastProps> = ({ toastList }) => {
+	console.log("toastList", toastList);
+	return (
 		<>
 			<h1>Toast</h1>
-			{props.toastList.map((toast: IToastProperties) =>
-				<p>toast.description</p>
-			)}
+			{/* {toastList.map((toast: IToastProperties) => (
+					<p key={toast.id}>{toast.description}</p>
+          // https://reactjs.org/docs/error-boundaries.html Introducing Error Boundaries
+				))} */}
 		</>
 	);
 };
