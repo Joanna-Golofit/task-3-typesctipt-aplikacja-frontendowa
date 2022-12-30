@@ -1,7 +1,6 @@
-import React from 'react';
-import classes from './CopyButton.module.css';
+import React from "react";
+import classes from "./CopyButton.module.css";
 // import { notify } from "../helpers/helpers"; // nie moge tego tu przeniesc jako domyslne value bo typy sie nie zgadzaja..
-
 
 interface CopyButtonProps {
 	text?: string | undefined;
@@ -9,16 +8,20 @@ interface CopyButtonProps {
 	// onClick?: () => void;
 	// jakasFunkcja: () => void;
 	// jakasFunkcja: (e: React.FormEvent) => void;
-};
+}
 
 // const CopyButton = ({ onClick = { notify }, text = "Copy" }: CopyButtonProps) => {
 const CopyButton = ({ onClick, text = "Copy" }: CopyButtonProps) => {
 	return (
 		<>
-		<button className={classes.copyButton} onClick={onClick}>
-			{text}
-		</button>
-		<br />
+			<button
+				className={classes.copyButton}
+				title="Click to copy to the clipboard"
+				onClick={onClick}
+			>
+				{text}
+			</button>
+			<br />
 		</>
 	);
 };

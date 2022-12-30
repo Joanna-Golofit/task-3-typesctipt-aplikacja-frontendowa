@@ -12,8 +12,26 @@ export interface IClipboardData {
 
 export interface ClipboardProviderProps {
 	children: React.ReactNode;
+};
+
+export type ClipboardContextType = {
+	clipboardData: IClipboardData;
+	saveClipboardData: (text: string) => void;
+	saveClipboardDataErr: () => void;
+	list: IToastProperties;
+	showToast: () => void;
+};
+
+export interface IToastProperties {
+	id: number;
+	title: string;
+	description: string;
+	color: string;
 }
 
+export interface ToastProps {
+	toastList?: IToastProperties[] | any;
+};
 // export interface CopyToClipboardContext {
 // 	isRequestSuccess: boolean;
 // }
