@@ -9,7 +9,7 @@ import {
 const initialClipboardData: IClipboardData = {
 	copiedData: "",
 	copiedDataList: [],
-	isRequestSuccess: Math.floor(Math.random() * 10) < 9,
+	// isRequestSuccess: Math.floor(Math.random() * 10) < 9,
 };
 
 export const ClipboardContext = React.createContext<ClipboardContextType | null>(null);
@@ -20,24 +20,24 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 
 	const saveClipboardData = (text: string) => {
 		setClipboardData({
-			isRequestSuccess: Math.floor(Math.random() * 10) < 3,
+			// isRequestSuccess: Math.floor(Math.random() * 10) < 3,
 			copiedData: text,
 			copiedDataList: [
-				...clipboardData.copiedDataList,
 				{
 					id: Math.floor(Math.random() * 100000),
-					title: text,
-					isRequestSuccess: Math.floor(Math.random() * 10) < 9,
+					text: text,
+					isRequestSuccess: Math.floor(Math.random() * 10) < 8,
 				},
+				...clipboardData.copiedDataList,
 			],
 		});
 	}
-	const saveClipboardDataErr = () => {
-		setClipboardData({
-			...clipboardData,
-			isRequestSuccess: Math.floor(Math.random() * 10) < 3,
-		});
-	}
+	// const saveClipboardDataErr = () => {
+	// 	setClipboardData({
+	// 		...clipboardData,
+	// 		isRequestSuccess: Math.floor(Math.random() * 10) < 3,
+	// 	});
+	// }
 
 	// const [list, setList] = useState<IToastProperties[]>([
 	// 	{
@@ -64,7 +64,7 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 			value={{
 				clipboardData,
 				saveClipboardData,
-				saveClipboardDataErr,
+				// saveClipboardDataErr,
 				// list,
 				// showToast,
 			}}
