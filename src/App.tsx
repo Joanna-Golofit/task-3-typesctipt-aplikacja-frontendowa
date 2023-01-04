@@ -28,7 +28,11 @@ const App: React.FC = () => {
 				{/* {ctx !== null && ctx.clipboardData.isRequestSuccess && ( */}
 				{ctx !== null && (
 					<>
-						<Toast toastList={ctx.list} text={ctx.clipboardData.copiedData } />
+						<Toast
+							toastList={ctx.clipboardData.copiedDataList}
+							text={ctx.clipboardData.copiedData}
+							position="bottom-right"
+						/>
 						{/* <Toast /> */}
 					</>
 				)}
@@ -60,7 +64,7 @@ const App: React.FC = () => {
 				/> */}
 
 			<Footer />
-			</>
+		</>
 	);
 };
 

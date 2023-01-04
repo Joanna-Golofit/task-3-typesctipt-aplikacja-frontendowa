@@ -46,7 +46,7 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 						<span className="DataToCopy">
 							{`${location.country} ${location.street} ${location.zip} ${location.city}`}
 						</span>
-						<CopyButton onClick={(e) => notify(e)} />
+						<CopyButton onClick={notify} />
 					</li>
 				))}
 			</ul>

@@ -1,0 +1,50 @@
+.container {
+	font-size: 14px;
+	position: fixed;
+	z-index: 10;
+}
+
+.bottom-right {
+	bottom: 3rem;
+	right: 1rem;
+}
+.bottom-left {
+	bottom: 3rem;
+	left: 1rem;
+}
+.top-right {
+	top: 1rem;
+	right: 1rem;
+}
+.top-left {
+	top: 1rem;
+	left: 1rem;
+}
+
+.notification {
+	margin-bottom: 1rem;
+	border-radius: 4px;
+	box-shadow: 0 0 10px #999;
+}
+
+.toast {
+	height: 50px;
+	width: 365px;
+	color: white;
+	background: rgb(44, 44, 44);
+	padding: 20px 15px 10px 10px;
+}
+
+.error {
+	background-color: red;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+}
+
+.success {
+	background-color: green;
+  width: 15px;
+	height: 15px;
+	border-radius: 50%;
+}

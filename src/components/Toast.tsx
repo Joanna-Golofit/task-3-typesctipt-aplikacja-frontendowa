@@ -1,18 +1,23 @@
 import React from "react";
-import { ToastProps, IToastProperties } from "../models";
+import styles from "./Toast.module.css";
+import { ToastProps, ICopiedDataList } from "../models";
 
-const Toast: React.FC<ToastProps> = ({ toastList, text }) => {
+const Toast: React.FC<ToastProps> = ({ toastList, text, position }) => {
 	console.log("toastList", toastList);
 	return (
 		<>
-			<div style={{ backgroundColor: text === "" ? "blue" : "red" }}>
-				<h1>Toast</h1>
-				{toastList.length >= 1 &&
-					toastList.map((toast: IToastProperties) => (
-						<div>
+			{/* <div style={{ backgroundColor: text === "" ? "blue" : "red" }}> */}
+			<div className={`${styles.container} ${styles[position]}`}>
+				{toastList.length > 0 &&
+					toastList.map((toast: ICopiedDataList) => (
+						<div
+							key={toast.id}
+							className={`${styles.notification} ${styles.toast}`}
+						>
 							<button>X</button>
-							<div>
-								<p key={toast.id}>{text}</p>
+              <div>
+                <div className={toast.isRequestSuccess ? styles.success : styles.error}></div>
+								<span className={styles.text}>{text}</span>
 							</div>
 						</div>
 					))}

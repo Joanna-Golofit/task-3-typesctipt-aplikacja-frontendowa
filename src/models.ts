@@ -7,6 +7,7 @@ export interface Locations {
 
 export interface IClipboardData {
 	copiedData: string;
+	copiedDataList: any;
 	isRequestSuccess: boolean;
 }
 
@@ -18,20 +19,28 @@ export type ClipboardContextType = {
 	clipboardData: IClipboardData;
 	saveClipboardData: (text: string) => void;
 	saveClipboardDataErr: () => void;
-	list: IToastProperties;
-	showToast: () => void;
+	// list: IToastProperties;
+	// showToast: () => void;
 };
 
-export interface IToastProperties {
+// export interface IToastProperties {
+// 	id: number;
+// 	title: string;
+// 	description: string;
+// 	color: string;
+// }
+export interface ICopiedDataList {
 	id: number;
 	title: string;
-	description: string;
-	color: string;
+	// description: string;
+	// color: string;
+	isRequestSuccess: boolean;
 }
 
 export interface ToastProps {
-	toastList?: IToastProperties[] | any;
+	toastList?: ICopiedDataList[] | any;
 	text?: string;
+	position: string;
 };
 // export interface CopyToClipboardContext {
 // 	isRequestSuccess: boolean;
