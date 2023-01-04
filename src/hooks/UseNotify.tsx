@@ -12,19 +12,19 @@ const useNotify = () => {
 		const dataToCopy = (target.previousElementSibling as HTMLLIElement)
 			.innerHTML;
 
-		if (ctx !== null && ctx.clipboardData.isRequestSuccess) {
+			// if (ctx !== null && ctx.clipboardData.isRequestSuccess) {
+		if (ctx !== null) {
 			ctx.saveClipboardData(dataToCopy);
 			console.log("dataToCopy", dataToCopy);
 			console.log("ctx z opoznieniem", ctx);
 			navigator.clipboard.writeText(dataToCopy);
 		}
 
-		if (ctx !== null && !ctx.clipboardData.isRequestSuccess) {
-			ctx.saveClipboardDataErr();
-			console.log("no dataToCopy");
-			// console.log("ctx z opoznieniem", ctx);
-			// navigator.clipboard.writeText(dataToCopy);
-		}
+		// if (ctx !== null && !ctx.clipboardData.isRequestSuccess) {
+		// 	ctx.saveClipboardDataErr();
+		// 	console.log("no dataToCopy");
+		// }
+
 		// 		if (ctx.isRequestSuccess) {
 		// 			console.log(
 		// 				"success",

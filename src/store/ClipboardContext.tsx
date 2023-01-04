@@ -25,12 +25,12 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 		});
 	}
 
-	const [list, setList] = useState<IToastProperties | any>({
+	const [list, setList] = useState<IToastProperties | any>([{
 		id: 1,
 		title: "00",
 		description: "300!",
 		color: "red,",
-	});
+	}]);
 
 	let toastProperties = null;
 	const showToast = () => {

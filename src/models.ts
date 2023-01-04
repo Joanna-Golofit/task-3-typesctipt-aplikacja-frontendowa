@@ -31,6 +31,7 @@ export interface IToastProperties {
 
 export interface ToastProps {
 	toastList?: IToastProperties[] | any;
+	text?: string;
 };
 // export interface CopyToClipboardContext {
 // 	isRequestSuccess: boolean;

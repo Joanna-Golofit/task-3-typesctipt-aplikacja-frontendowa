@@ -7,28 +7,28 @@ import AboutUs from "./pages/AboutUs";
 // import Home from "./pages/Home";
 import "./App.css";
 import { locations } from "./constants";
-import { ClipboardContext, ClipboardProvider } from "./store/ClipboardContext";
-import { ToastContainer } from "react-toastify";
+import { ClipboardContext } from "./store/ClipboardContext";
+// import { ToastContainer } from "react-toastify";
 import Toast from "./components/Toast";
 
 const App: React.FC = () => {
 
 	const ctx = useContext(ClipboardContext);
-	if (ctx !== null && ctx.clipboardData.isRequestSuccess) {
-		console.log("ctx.list", ctx.list);
-	}
+	// if (ctx !== null && ctx.clipboardData.isRequestSuccess) {
+	// 	console.log("ctx.list", ctx.list);
+	// }
 	console.log("ctx", ctx);
 	return (
-		// <ClipboardProvider>
 		<>
 			<Navigation />
 			<main>
 				<p>elo</p>
 				{/* <Toast toastList={ctx.list} /> */}
 
-				{ctx !== null && ctx.clipboardData.isRequestSuccess && (
+				{/* {ctx !== null && ctx.clipboardData.isRequestSuccess && ( */}
+				{ctx !== null && (
 					<>
-						<Toast toastList={ctx.list} />
+						<Toast toastList={ctx.list} text={ctx.clipboardData.copiedData } />
 						{/* <Toast /> */}
 					</>
 				)}
@@ -52,16 +52,15 @@ const App: React.FC = () => {
 					ich zamknięcia
 				</div>
 			</main>
-			<ToastContainer
+			{/* <ToastContainer
 				autoClose={3000}
 				limit={3}
 				closeOnClick
 				position="bottom-right"
-				/>
+				/> */}
 
 			<Footer />
 			</>
-		// </ClipboardProvider>
 	);
 };
 
