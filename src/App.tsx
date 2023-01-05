@@ -17,7 +17,7 @@ const App: React.FC = () => {
 	// if (ctx !== null && ctx.clipboardData.isRequestSuccess) {
 	// 	console.log("ctx.list", ctx.list);
 	// }
-	console.log("ctx", ctx);
+	// console.log("ctx", ctx);
 	return (
 		<>
 			<Navigation />
@@ -27,14 +27,11 @@ const App: React.FC = () => {
 
 				{/* {ctx !== null && ctx.clipboardData.isRequestSuccess && ( */}
 				{ctx !== null && (
-					<>
 						<Toast
 							toastList={ctx.clipboardData.copiedDataList}
 							text={ctx.clipboardData.copiedData}
 							position="bottom-right"
 						/>
-						{/* <Toast /> */}
-					</>
 				)}
 				<Routes>
 					{/* <Route path="/home" element={<Home />} /> */}

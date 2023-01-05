@@ -18,6 +18,7 @@ export interface ClipboardProviderProps {
 export type ClipboardContextType = {
 	clipboardData: IClipboardData;
 	saveClipboardData: (text: string) => void;
+	deleteToast: (id: number) => void
 	// saveClipboardDataErr: () => void;
 	// list: IToastProperties;
 	// showToast: () => void;

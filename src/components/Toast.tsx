@@ -1,42 +1,30 @@
-import React, { useState, useCallback } from "react";
+import React, { useContext } from "react";
 import styles from "./Toast.module.css";
 import { ToastProps, ICopiedDataList } from "../models";
+import { ClipboardContext } from "../store/ClipboardContext";
 
 const Toast: React.FC<ToastProps> = ({ toastList, text, position }) => {
-  const [newToastList, setNewToastList] = useState<ICopiedDataList[]>([...toastList]);
+	const ctx = useContext(ClipboardContext);
+	console.log("ctx", ctx);
+
 	console.log("toastList", toastList);
-	console.log("newToastList", newToastList);
-  console.log("text", text);
-  
-  const deleteToast = useCallback(
-		(id: number) => {
-			console.log("id", id);
-			const newList = [...newToastList].filter(
-				(toast: ICopiedDataList) => toast.id !== id
-			);
-			setNewToastList([...newList]);
-			// setNewToastList((newToastList: ICopiedDataList[]) =>
-			// 	[...newToastList.filter((toast: ICopiedDataList) => toast.id !== id)]
-			// );
-		},
-		[toastList]
-	);
+	console.log("text", text);
+
 	return (
 		<div className={`${styles.container} ${styles[position]}`}>
-			{toastList.length > 0 &&
+			{toastList.length > 0 && ctx !== null &&
 				toastList.map((toast: ICopiedDataList) => (
 					<div
 						key={toast.id}
 						className={`${styles.notification} ${styles.toast} ${styles[position]}`}
 					>
-						<button onClick={() => deleteToast(toast.id)}>X</button>
+						<button onClick={() => ctx.deleteToast(toast.id)}>X</button>
 						<div>
 							<div
 								className={`${styles.dot} ${
 									toast.isRequestSuccess ? styles.success : styles.error
 								}`}
 							></div>
-							{/* {toast.isRequestSuccess ? <span className={styles.title}> success</span> : <span className={styles.text}> error</span>} */}
 							<span className={styles.title}>
 								{toast.isRequestSuccess
 									? "Copy to clipboard succeeded"
