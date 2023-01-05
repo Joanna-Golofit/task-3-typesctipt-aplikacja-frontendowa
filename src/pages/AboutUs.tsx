@@ -23,7 +23,7 @@ const AboutUs: React.FC<Props> = ({ locations }: Props) => {
 	// 	showToast,
 	// } = ctx; Property 'saveClipboardDataErr' does not exist on type 'ClipboardContextType | null'.ts(2339)
 
-	console.log("ctx about", ctx);
+	// console.log("ctx about", ctx);
 
 	return (
 		<div>

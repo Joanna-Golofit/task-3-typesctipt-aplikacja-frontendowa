@@ -1,18 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./Toast.module.css";
 import { ToastProps, ICopiedDataList } from "../models";
 import { ClipboardContext } from "../store/ClipboardContext";
 
 const Toast: React.FC<ToastProps> = ({ toastList, text, position }) => {
 	const ctx = useContext(ClipboardContext);
-	console.log("ctx", ctx);
+	// console.log("ctx", ctx);
 
 	console.log("toastList", toastList);
-	console.log("text", text);
+	// console.log("text", text);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (ctx !== null && toastList.length) {
+				ctx.deleteToast(toastList[toastList.length - 1].id);
+			}
+		}, 3000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	}, [toastList, ctx]);
 
 	return (
 		<div className={`${styles.container} ${styles[position]}`}>
-			{toastList.length > 0 && ctx !== null &&
+			{toastList.length > 0 &&
+				ctx !== null &&
 				toastList.map((toast: ICopiedDataList) => (
 					<div
 						key={toast.id}
