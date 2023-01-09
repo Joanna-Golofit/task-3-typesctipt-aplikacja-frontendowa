@@ -1,14 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import AboutUs from "./pages/AboutUs";
-// import Contact from "./pages/Contact";
-// import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
 import "./App.css";
 import { locations } from "./constants";
 import { ClipboardContext } from "./store/ClipboardContext";
-// import { ToastContainer } from "react-toastify";
 import Toast from "./components/Toast";
 
 const App: React.FC = () => {
@@ -22,10 +21,6 @@ const App: React.FC = () => {
 		<>
 			<Navigation />
 			<main>
-				<p>elo</p>
-				{/* <Toast toastList={ctx.list} /> */}
-
-				{/* {ctx !== null && ctx.clipboardData.isRequestSuccess && ( */}
 				{ctx !== null && (
 						<Toast
 							toastList={ctx.clipboardData.copiedDataList}
@@ -34,10 +29,10 @@ const App: React.FC = () => {
 						/>
 				)}
 				<Routes>
-					{/* <Route path="/home" element={<Home />} /> */}
+					<Route path="/home" element={<Home />} />
 					<Route path="/aboutUs" element={<AboutUs locations={locations} />} />
-					{/* <Route path="/contact" element={<Contact />} /> */}
-					{/* <Route path="/" element={<Navigate to="/home" />} /> */}
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/" element={<Navigate to="/home" />} />
 					{/* // add route:* */}
 				</Routes>
 				<br />
@@ -53,12 +48,6 @@ const App: React.FC = () => {
 					ich zamknięcia
 				</div>
 			</main>
-			{/* <ToastContainer
-				autoClose={3000}
-				limit={3}
-				closeOnClick
-				position="bottom-right"
-				/> */}
 
 			<Footer />
 		</>

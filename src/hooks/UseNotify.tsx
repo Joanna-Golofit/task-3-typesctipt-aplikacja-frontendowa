@@ -16,37 +16,12 @@ const useNotify = () => {
 		if (ctx !== null) {
 			ctx.saveClipboardData(dataToCopy);
 			console.log("dataToCopy", dataToCopy);
-			console.log("ctx z opoznieniem", ctx);
+			console.log("ctx z opoznieniem?", ctx.clipboardData.copiedDataList);
+			// async await if ctx.clipboardData.copiedDataList ma isRequestSuccess true to zapisujemy do clipboardu
 			navigator.clipboard.writeText(dataToCopy);
 		}
 
-		// if (ctx !== null && !ctx.clipboardData.isRequestSuccess) {
-		// 	ctx.saveClipboardDataErr();
-		// 	console.log("no dataToCopy");
-		// }
-
-		// 		if (ctx.isRequestSuccess) {
-		// 			console.log(
-		// 				"success",
-		// 				(target.previousElementSibling as HTMLLIElement).innerHTML
-		// 			);
-		// 			toast.success("Copy to clipboard succeeded", {
-		// 				theme: "dark",
-		// 				pauseOnFocusLoss: false,
-		// 			});
-		// 		} else {
-		// 			console.log(
-		// 				"not",
-		// 				(target.previousElementSibling as HTMLLIElement).innerHTML
-		// 			);
-		// 			toast.error("Copy to clipboard failed", {
-		// 				theme: "dark",
-		// 				pauseOnFocusLoss: false,
-		// 			});
-		// 		}
-
-		// 		console.log("clg", dataToCopy);
-		// 		navigator.clipboard.writeText(dataToCopy);
+	navigator.clipboard.writeText(dataToCopy);
 	};
 	return {
 		notify,
