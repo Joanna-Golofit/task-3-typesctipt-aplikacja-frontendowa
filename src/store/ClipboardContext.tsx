@@ -7,7 +7,7 @@ import {
 } from "../models";
 
 const initialClipboardData: IClipboardData = {
-	copiedData: "",
+	// copiedData: "",
 	copiedDataList: [],
 };
 
@@ -17,14 +17,13 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 	const [clipboardData, setClipboardData] =
 		useState(initialClipboardData);
 
-	const saveClipboardData = (text: string) => {
+	const saveClipboardData = (text: string, isSuccess: boolean) => {
 		setClipboardData({
-			copiedData: text,
 			copiedDataList: [
 				{
 					id: Math.floor(Math.random() * 100000),
 					text: text,
-					isRequestSuccess: Math.floor(Math.random() * 10) < 8,
+					isRequestSuccess: isSuccess,
 				},
 				...clipboardData.copiedDataList,
 			],
@@ -37,7 +36,6 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 		);
 		console.log("newList", newList);
 		setClipboardData({
-			copiedData: clipboardData.copiedData,
 			copiedDataList: newList,
 		});
 	};

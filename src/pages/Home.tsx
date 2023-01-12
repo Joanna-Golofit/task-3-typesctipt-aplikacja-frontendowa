@@ -1,6 +1,5 @@
 // import React from "react";
 import CopyButton from "../components/CopyButton";
-// // import useClipboardAndNotification from "../hooks/use-clipboard-and-notification";
 import useNotify from "../hooks/UseNotify";
 import classes from "./Home.module.css";
 

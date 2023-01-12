@@ -3,12 +3,10 @@ import styles from "./Toast.module.css";
 import { ToastProps, ICopiedDataList } from "../models";
 import { ClipboardContext } from "../store/ClipboardContext";
 
-const Toast: React.FC<ToastProps> = ({ toastList, text, position }) => {
+const Toast: React.FC<ToastProps> = ({ toastList, position }) => {
 	const ctx = useContext(ClipboardContext);
-	// console.log("ctx", ctx);
 
 	console.log("toastList", toastList);
-	// console.log("text", text);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -52,4 +50,3 @@ const Toast: React.FC<ToastProps> = ({ toastList, text, position }) => {
 };
 
 export default Toast;
-// https://reactjs.org/docs/error-boundaries.html Introducing Error Boundaries

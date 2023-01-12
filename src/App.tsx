@@ -13,20 +13,15 @@ import Toast from "./components/Toast";
 const App: React.FC = () => {
 
 	const ctx = useContext(ClipboardContext);
-	// if (ctx !== null && ctx.clipboardData.isRequestSuccess) {
-	// 	console.log("ctx.list", ctx.list);
-	// }
-	// console.log("ctx", ctx);
 	return (
 		<>
 			<Navigation />
 			<main>
 				{ctx !== null && (
-						<Toast
-							toastList={ctx.clipboardData.copiedDataList}
-							text={ctx.clipboardData.copiedData}
-							position="bottom-right"
-						/>
+					<Toast
+						toastList={ctx.clipboardData.copiedDataList}
+						position="bottom-right"
+					/>
 				)}
 				<Routes>
 					<Route path="/home" element={<Home />} />
