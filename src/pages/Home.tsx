@@ -1,4 +1,3 @@
-// import React from "react";
 import CopyButton from "../components/CopyButton";
 import useNotify from "../hooks/UseNotify";
 import classes from "./Home.module.css";
@@ -17,11 +16,9 @@ const Home: React.FC = () => {
 						zawartością treści w paragrafie pod headingiem.... Przy headingu
 						dodaj button/iconę kopiowania - po kliku powinna wykonać się akcja
 						kopiowania treści z paragrafu do schowka a następnie komunikat o
-						skopiowaniu... zawartością treści w paragrafie pod headingiem.
-						Zawartością treści w paragrafie pod headingiem, zawartością treści w
-						paragrafie pod headingiem.. zawartością treści w paragrafie pod
-						headingiem.... zawartością treści w paragrafie pod headingiem.
-						Zawartością treści w paragrafie pod headingiem, zawartością treści w
+						skopiowaniu... treści w paragrafie pod
+						headingiem.... zawartością w paragrafie pod headingiem.
+						W paragrafie pod headingiem, zawartością treści w
 						paragrafie pod headingiem..
 					</span>
 					<CopyButton onClick={notify} />

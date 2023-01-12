@@ -13,7 +13,7 @@ const useNotify = () => {
 		if (ctx !== null) {
 			ctx.saveClipboardData(dataToCopy, isSuccess);
 			console.log("dataToCopy", dataToCopy);
-			console.log("ctx z opoznieniem?", ctx);
+			console.log("ctx z notify", ctx);
 			if (isSuccess) {
 				navigator.clipboard.writeText(dataToCopy);
 			}

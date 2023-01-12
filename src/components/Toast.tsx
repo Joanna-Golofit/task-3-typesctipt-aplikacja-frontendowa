@@ -41,7 +41,9 @@ const Toast: React.FC<ToastProps> = ({ toastList, position }) => {
 									? "Copy to clipboard succeeded"
 									: "Copy to clipboard failed!"}
 							</span>
-							<p className={styles.text}>{toast.text}</p>
+							{toast.isRequestSuccess &&
+								<p className={styles.text}>{toast.text}</p>
+							}
 						</div>
 					</div>
 				))}

@@ -7,7 +7,6 @@ import {
 } from "../models";
 
 const initialClipboardData: IClipboardData = {
-	// copiedData: "",
 	copiedDataList: [],
 };
 
