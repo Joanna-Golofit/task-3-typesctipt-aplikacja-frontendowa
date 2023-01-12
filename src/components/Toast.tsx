@@ -3,7 +3,7 @@ import styles from "./Toast.module.css";
 import { ToastProps, ICopiedDataList } from "../models";
 import { ClipboardContext } from "../store/ClipboardContext";
 
-const Toast: React.FC<ToastProps> = ({ toastList, position }) => {
+const Toast = ({ toastList, position }: ToastProps) => {
 	const ctx = useContext(ClipboardContext);
 
 	console.log("toastList", toastList);
@@ -41,9 +41,9 @@ const Toast: React.FC<ToastProps> = ({ toastList, position }) => {
 									? "Copy to clipboard succeeded"
 									: "Copy to clipboard failed!"}
 							</span>
-							{toast.isRequestSuccess &&
+							{toast.isRequestSuccess && (
 								<p className={styles.text}>{toast.text}</p>
-							}
+							)}
 						</div>
 					</div>
 				))}

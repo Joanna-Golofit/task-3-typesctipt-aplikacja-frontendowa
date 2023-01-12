@@ -1,7 +1,10 @@
 # Getting Started with Create React App
 
 
+pozbyc sie useNotify a funkcje notify przeniesc do kontekstu
+do else w finkcji notify przeniesc co sie dzieje kiedy jest error
 
+poprawic nazwy interface zeby zaczynaly sie na I
 
 
 

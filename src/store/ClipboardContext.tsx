@@ -45,6 +45,7 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 				clipboardData,
 				saveClipboardData,
 				deleteToast,
+				// copyToClipboard // notify
 			}}
 		>
 			{children}

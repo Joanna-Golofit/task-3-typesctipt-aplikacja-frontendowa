@@ -13,7 +13,7 @@ export interface ClipboardProviderProps {
 	children: React.ReactNode;
 };
 
-export type ClipboardContextType = {
+export interface ClipboardContextType {
 	clipboardData: IClipboardData;
 	saveClipboardData: (text: string, isSuccess: boolean) => void;
 	deleteToast: (id: number) => void;

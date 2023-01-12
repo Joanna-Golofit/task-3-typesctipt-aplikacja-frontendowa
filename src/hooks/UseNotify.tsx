@@ -16,6 +16,8 @@ const useNotify = () => {
 			console.log("ctx z notify", ctx);
 			if (isSuccess) {
 				navigator.clipboard.writeText(dataToCopy);
+			} else {
+				// clg.error
 			}
 		}
 	};
