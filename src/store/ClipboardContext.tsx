@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
 	IClipboardData,
-	ClipboardProviderProps,
-	ClipboardContextType,
+	IClipboardProviderProps,
+	IClipboardContextType,
 	ICopiedDataList,
 } from "../models";
 
@@ -10,11 +10,12 @@ const initialClipboardData: IClipboardData = {
 	copiedDataList: [],
 };
 
-export const ClipboardContext = React.createContext<ClipboardContextType | null>(null);
+export const ClipboardContext = React.createContext<IClipboardContextType>(
+	{} as IClipboardContextType
+);
 
-export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
-	const [clipboardData, setClipboardData] =
-		useState(initialClipboardData);
+export const ClipboardProvider = ({ children }: IClipboardProviderProps) => {
+	const [clipboardData, setClipboardData] = useState(initialClipboardData);
 
 	const saveClipboardData = (text: string, isSuccess: boolean) => {
 		setClipboardData({
@@ -27,7 +28,7 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 				...clipboardData.copiedDataList,
 			],
 		});
-	}
+	};
 
 	const deleteToast = (id: number) => {
 		const newList = clipboardData.copiedDataList.filter(
@@ -39,13 +40,30 @@ export const ClipboardProvider = ({ children }: ClipboardProviderProps) => {
 		});
 	};
 
+	const notifyMe = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+		const isSuccess = Math.floor(Math.random() * 10) < 6;
+		const target = event.target as HTMLElement;
+		const dataToCopy = (target.previousElementSibling as HTMLElement).innerHTML;
+		saveClipboardData(dataToCopy, isSuccess);
+
+		console.log("dataToCopy", dataToCopy);
+		console.log("ClipboardContext z notify", ClipboardContext);
+		if (isSuccess) {
+			// saveClipboardData(dataToCopy, isSuccess);
+			navigator.clipboard.writeText(dataToCopy);
+		} else {
+			// clg.error
+			// saveClipboardData(dataToCopy, isSuccess);
+		}
+	};
+
 	return (
 		<ClipboardContext.Provider
 			value={{
 				clipboardData,
 				saveClipboardData,
 				deleteToast,
-				// copyToClipboard // notify
+				notifyMe,
 			}}
 		>
 			{children}

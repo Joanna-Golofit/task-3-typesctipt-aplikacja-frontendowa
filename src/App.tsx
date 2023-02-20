@@ -17,12 +17,10 @@ const App: React.FC = () => {
 		<>
 			<Navigation />
 			<main>
-				{ctx !== null && (
 					<Toast
 						toastList={ctx.clipboardData.copiedDataList}
 						position="bottom-right"
 					/>
-				)}
 				<Routes>
 					<Route path="/home" element={<Home />} />
 					<Route path="/aboutUs" element={<AboutUs locations={locations} />} />

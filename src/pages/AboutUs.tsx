@@ -1,27 +1,24 @@
-import React from "react";
-import { Locations } from "../models";
+import React, { useContext } from "react";
+import { ILocations } from "../models";
 import CopyButton from "../components/CopyButton";
-import useNotify from "../hooks/UseNotify";
+import { ClipboardContext } from "../store/ClipboardContext";
 interface Props {
-	locations: Locations[];
+	locations: ILocations[];
 }
 
 const AboutUs: React.FC<Props> = ({ locations }: Props) => {
-		const { notify } = useNotify();
-
+	const ctx = useContext(ClipboardContext);
 
 	return (
 		<div>
 			<h1>AboutUs</h1>
 			<ul>
 				{locations.map(location => (
-					<li
-						key={location.zip}
-					>
+					<li key={location.zip}>
 						<span className="DataToCopy">
 							{`${location.country} ${location.street} ${location.zip} ${location.city}`}
 						</span>
-						<CopyButton onClick={notify} />
+							<CopyButton onClick={ctx.notifyMe} />
 					</li>
 				))}
 			</ul>
