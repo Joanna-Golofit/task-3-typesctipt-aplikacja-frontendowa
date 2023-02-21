@@ -6,7 +6,7 @@ export interface ILocations {
 }
 
 export interface IClipboardData {
-	copiedDataList: any;
+	copiedDataList: ICopiedDataList[];
 }
 
 export interface IClipboardProviderProps {
@@ -27,7 +27,7 @@ export interface ICopiedDataList {
 }
 
 export interface IToastProps {
-	toastList: ICopiedDataList[] | any;
+	toastList: ICopiedDataList[];
 	text?: string;
 	position: string;
 };

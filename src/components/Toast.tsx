@@ -6,8 +6,6 @@ import { ClipboardContext } from "../store/ClipboardContext";
 const Toast = ({ toastList, position }: IToastProps) => {
 	const ctx = useContext(ClipboardContext);
 
-	console.log("toastList", toastList);
-
 	useEffect(() => {
 		const interval = setInterval(() => {
 			if (toastList.length) {

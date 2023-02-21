@@ -34,7 +34,6 @@ export const ClipboardProvider = ({ children }: IClipboardProviderProps) => {
 		const newList = clipboardData.copiedDataList.filter(
 			(toast: ICopiedDataList) => toast.id !== id
 		);
-		console.log("newList", newList);
 		setClipboardData({
 			copiedDataList: newList,
 		});
@@ -46,14 +45,8 @@ export const ClipboardProvider = ({ children }: IClipboardProviderProps) => {
 		const dataToCopy = (target.previousElementSibling as HTMLElement).innerHTML;
 		saveClipboardData(dataToCopy, isSuccess);
 
-		console.log("dataToCopy", dataToCopy);
-		console.log("ClipboardContext z notify", ClipboardContext);
 		if (isSuccess) {
-			// saveClipboardData(dataToCopy, isSuccess);
 			navigator.clipboard.writeText(dataToCopy);
-		} else {
-			// clg.error
-			// saveClipboardData(dataToCopy, isSuccess);
 		}
 	};
 
