@@ -15,6 +15,7 @@ uzywam kontekstu i custom hooka UseNotify
 
 
 
+![image](https://github.com/Joanna-Golofit/task-3-typesctipt-aplikacja-frontendowa/assets/81862821/3556d921-e194-4b31-b7eb-03404c01077a)
 
 
 
