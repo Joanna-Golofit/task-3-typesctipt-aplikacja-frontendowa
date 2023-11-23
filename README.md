@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+# aplikacja do tworzenia toastów, bez uzycia zadnej libki, losowo enerujace bledy przy kopiowaniu danych
+
 
 pozbyc sie useNotify a funkcje notify przeniesc do kontekstu
 do else w finkcji notify przeniesc co sie dzieje kiedy jest error
