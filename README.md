@@ -2,12 +2,12 @@
 
 # aplikacja do tworzenia toastów, bez uzycia zadnej libki, losowo enerujace bledy przy kopiowaniu danych
 
-
-pozbyc sie useNotify a funkcje notify przeniesc do kontekstu
-do else w finkcji notify przeniesc co sie dzieje kiedy jest error
-
-poprawic nazwy interface zeby zaczynaly sie na I
-
+#Technologie użyte do zadania
+• React, Typescript, HTML, CSS,
+#Cel zadania:
+• zadaniem było stworzenie od zera frontendowej aplikacji webowej z
+funkcjonalnością kopiowania danych do schowka.
+• Do utworzenia szkieletu aplikacji użyłam create-react-app
 
 
 uzywam kontekstu i custom hooka UseNotify
