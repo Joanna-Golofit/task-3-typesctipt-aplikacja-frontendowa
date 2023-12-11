@@ -4,10 +4,15 @@
 # An application for creating toasts without using any library, randomly generating errors during data copying
 
 #Technologie użyte do zadania
+
 #Technologies used for the task
+
 • React, Typescript, HTML, CSS,
+
 #Cel zadania:
+
 #Task objective:
+
 • zadaniem było stworzenie od zera frontendowej aplikacji webowej z
 funkcjonalnością kopiowania danych do schowka.
 • Do utworzenia szkieletu aplikacji użyłam create-react-app
