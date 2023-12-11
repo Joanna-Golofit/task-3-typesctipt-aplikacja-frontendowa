@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# aplikacja do tworzenia toastów, bez uzycia zadnej libki, losowo enerujace bledy przy kopiowaniu danych
+# aplikacja do tworzenia toastów, bez uzycia zadnej libki, losowo generujaca błędy przy kopiowaniu danych
 
 #Technologie użyte do zadania
 • React, Typescript, HTML, CSS,
