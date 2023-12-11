@@ -1,17 +1,12 @@
 # Getting Started with Create React App
 
-# aplikacja do tworzenia toastów, bez uzycia zadnej libki, losowo generujaca błędy przy kopiowaniu danych
-# An application for creating toasts without using any library, randomly generating errors during data copying
+# Aplikacja do tworzenia toastów, bez uzycia zadnej libki, losowo generujaca błędy przy kopiowaniu danych / An application for creating toasts without using any library, randomly generating errors during data copying
 
-#Technologie użyte do zadania
-
-#Technologies used for the task
+#Technologie użyte do zadania / Technologies used for the task
 
 • React, Typescript, HTML, CSS,
 
-#Cel zadania:
-
-#Task objective:
+#Cel zadania / Task objective:
 
 • zadaniem było stworzenie od zera frontendowej aplikacji webowej z
 funkcjonalnością kopiowania danych do schowka.
