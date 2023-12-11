@@ -1,17 +1,23 @@
 # Getting Started with Create React App
 
 # aplikacja do tworzenia toastów, bez uzycia zadnej libki, losowo generujaca błędy przy kopiowaniu danych
+# An application for creating toasts without using any library, randomly generating errors during data copying
 
 #Technologie użyte do zadania
+#Technologies used for the task
 • React, Typescript, HTML, CSS,
 #Cel zadania:
+#Task objective:
 • zadaniem było stworzenie od zera frontendowej aplikacji webowej z
 funkcjonalnością kopiowania danych do schowka.
 • Do utworzenia szkieletu aplikacji użyłam create-react-app
+• uzywam kontekstu i custom hooka UseNotify
 
+---
 
-uzywam kontekstu i custom hooka UseNotify
-
+• The task was to create a front-end web application from scratch with the functionality of copying data to the clipboard.
+• I used create-react-app to set up the application's skeleton.
+• I used context and a custom hook called UseNotify.
 
 
 
