@@ -10,13 +10,17 @@
 
 • zadaniem było stworzenie od zera frontendowej aplikacji webowej z
 funkcjonalnością kopiowania danych do schowka.
+
 • Do utworzenia szkieletu aplikacji użyłam create-react-app
+
 • uzywam kontekstu i custom hooka UseNotify
 
 ---
 
 • The task was to create a front-end web application from scratch with the functionality of copying data to the clipboard.
+
 • I used create-react-app to set up the application's skeleton.
+
 • I used context and a custom hook called UseNotify.
 
 
